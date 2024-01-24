@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Client</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://kit.fontawesome.com/32db1411ec.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+
+
+
+<body>
+
+  <nav>
+  <div class="wrapper">
+    <input type="radio" name="slider" id="menu-btn">
+    <input type="radio" name="slider" id="close-btn">
+    <ul class="nav-links">
+      <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+      <div style="height: 15px"></div>
+      <li><a href="#header"><i class="fa-solid fa-house"></i></a></li>
+      <li><a href="#despre">Despre</a></li>
+      <li><a href="#galerie">Galerie</a></li>
+      <li><a href="#servicii">Servicii</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <script>
+  // Add event listeners to each navigation link
+  var navLinks = document.querySelectorAll('.nav-links');
+  var closeBtn = document.getElementById('close-btn');
+
+  navLinks.forEach(function(link) {
+    link.addEventListener('click', function() {
+      // Programmatically click the close button when a link is clicked
+      closeBtn.click();
+    });
+  });
+      </script>
+    </ul>
+    <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
+  </div>
+</nav>
+
+<header id="header">
+    <video loop autoplay muted>
+        <source src="header.mp4" type="video/mp4">
+    </video>
+    <div class="info-text">
+        <h1 data-aos="fade-up"
+        data-aos-duration="1000">Levant Galați</h1>
+            <div id="changingText"></div>
+<script>
+          document.addEventListener("DOMContentLoaded", function() {
+            var textArray = ["Salon Evenimente", "Centru de Afaceri", "Restaurant și Terasă"]; // Add your desired texts here
+            var currentIndex = 0;
+
+            function changeText() {
+                var changingTextElement = document.getElementById("changingText");
+                changingTextElement.textContent = textArray[currentIndex];
+                changingTextElement.style.opacity = 1; // Set opacity to 1 for immediate fade-in
+                setTimeout(function() {
+                    changingTextElement.style.opacity = 0; // Set opacity back to 0 for fade-out
+                }, 2000); // Stay visible for 2 seconds before fading out
+                currentIndex = (currentIndex + 1) % textArray.length;
+            }
+
+            // Change text every 3 seconds (1 second visible, 2 seconds fade-out)
+            setInterval(changeText, 3000);
+        });
+</script>
+    </div>
+</header>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">
+    <a aria-hidden="true">&#9206;</a>
+</button>
+
+<script>
+    // Get the button:
+let mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+
+<hr style="width:100%">
+
+  <!-- About Section -->
+  <div class="desprebig w3-padding-32"id="despre">
+    <div class=" despre">
+    <div class="imagine">
+     <img src="/Galerie/9.jpg" class="w3-round w3-image" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="0">
+    </div>
+
+    <div class="despre-text w3-padding-large" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="0">
+
+      <h1 class="w3-center" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="0">Despre</h1>
+
+      <p>Levant  este un salon de evenimente modern și elegant care vă asigură cadrul ideal pentru petrecerea celor mai importante momente din viața dumneavoastră: nunți, petreceri de logodnă, botezuri, până la seri tematice, evenimente culturale, corporatiste, conferințe, lansări, prezentări de modă, seminarii, aniversări, banchete, majorate etc.
+        <br>Restaurant Levant oferă pe lângă locația rafinată și festinul culinar, întregul pachet de servicii de care aveți nevoie pentru a avea un eveniment unic, nunta ta de vis.
+    </p>
+    </div>
+  </div>
+    <p class="despre-text2" data-aos="zoom-in-up" data-aos-delay="0"
+    data-aos-duration="800">        Locația este situată într-o zonă liniștită, ferită de traficul intens al marilor artere, pune la dispoziția clienților două săli de evenimente, facilități de cazare, terasă, spații de recreere, precum și aproximativ 40 locuri de parcare.
+
+    Spațiul, amenajat în stil modern, este prevăzut cu sisteme de ventilație și climatizare performante ce pot asigura maximum de confort pe toată durata anului și este dotat cu bucătărie ce poate satisface și cele mai rafinate gusturi culinare. 
+    <br>
+    În speranța că veți alege să petreceți alături de noi momentele speciale din viața dumneavoastră, noi vă întâmpinăm cu oferte adecvate fiecărui tip de eveniment, consiliere pe toată durata organizării și desfașurării efective a evenimentului și servicii de cea mai bună calitate, la unul din cele mai moderne restaurante din Galați.<br>
+        Vă așteptăm!</p>
+</div>
+
+
+  <hr data-aos="fade-up">
+<!----------Galerie-->
+<div class="galerie w3-padding-32" id="galerie">
+  <h1 class="w3-center w3-padding-32" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="0">Galerie</h1>
+  <div class="slideshow-container" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="200">
+
+    <div class="mySlides">
+      <a><img src="/Galerie/7.jpg"></a>
+    </div>
+    <div class="mySlides">
+      <a><img src="/Galerie/2.jpg"></a>
+    </div>
+    <div class="mySlides">
+      <a><img src="/Galerie/4.jpg"></a>
+    </div>
+    <div class="mySlides">
+      <a><img src="/Galerie/1.jpg"></a>
+    </div>
+    <div class="mySlides">
+      <a><img src="/Galerie/5.jpg"></a>
+    </div>
+    <div class="mySlides">
+      <a><img src="/Galerie/8.jpg"></a>
+    </div>
+    <div class="mySlides">
+      <a><img src="/Galerie/9.jpg"></a>
+    </div>
+    <div class="mySlides">
+      <a><img src="/Galerie/10.jpg"></a>
+    </div>
+    <div class="mySlides">
+      <a><img src="/Galerie/11.jpg"></a>
+    </div>
+    <div class="mySlides">
+      <a><img src="/Galerie/12.jpg"></a>
+    </div>
+    <div class="mySlides">
+      <a><img src="/Galerie/13.jpg"></a>
+    </div>
+
+    
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    
+    </div>
+    <br>
+    
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span> 
+      <span class="dot" onclick="currentSlide(3)"></span> 
+      <span class="dot" onclick="currentSlide(4)"></span> 
+      <span class="dot" onclick="currentSlide(5)"></span> 
+      <span class="dot" onclick="currentSlide(6)"></span> 
+      <span class="dot" onclick="currentSlide(7)"></span> 
+      <span class="dot" onclick="currentSlide(8)"></span> 
+      <span class="dot" onclick="currentSlide(9)"></span> 
+      <span class="dot" onclick="currentSlide(10)"></span> 
+      <span class="dot" onclick="currentSlide(11)"></span>
+    </div>
+      <script>
+        /* Slideshow Manual */
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+      </script>
+
+      <div class="galerie-more" data-aos="zoom-out-up" data-aos-duration="1000" data-aos-delay="0">
+      <p>Pentru mai multe, accesați: <a href="https://www.facebook.com/levantrestaurant/" target="_blank"><i class="fa-brands fa-facebook"></i></a></p>
+      </div>
+    </div>
+
+  <!-- Servicii Section -->
+    <div class="servicii w3-row w3-padding-32" id="servicii">
+      <h1 class="w3-center" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="0">Servicii</h1><br>
+      <div class="content-servicii" data-aos="fade-left"
+      data-aos-delay="0"
+      data-aos-duration="800">
+     <h4>Organizatori Evenimente   <i class="fa-solid fa-champagne-glasses"></i></h4>
+        <p>Restaurant Levant este unul din cele mai moderne și elegante restaurante din Galați. Amplasat într-o zonă liniștită, restaurantul este perfect pentru toate genurile de evenimente, de la nunți, petreceri de logodnă, botezuri până la seri tematice, evenimente corporate, conferințe, lansări de produs, prezentări de modă, etc.
+
+        Pentru cei care își doresc să petreacă momente inedite într-un cadru natural, pe durata verii vă punem la dispoziție terasa restaurantului Levant pentru a celebra după nuntă tradiționalul eveniment ciorba de potroace, alături de membrii familiei și prietenii apropiați.</p><br>
+
+        <h4>Centru de afaceri   <i class="fa-solid fa-briefcase"></i></h4>
+        <p>Centrul de afaceri Levant organizeaza seminarii, conferinte, intruniri de afaceri, lansari de produs, cursuri de formare profesionala. Spatiul este dotat cu toate echipamentenle necesare desfasurarii evenimentelor amintite mai sus.</p><br>
+    
+        <h4>Restaurant și terasă   <i class="fa-solid fa-utensils"></i></h4>
+        <p>Restaurantul Levant vă propune seri tematice în cursul săptămânii, pentru a vă relaxa și deconecta de cotidian, într-o atmosferă intimă și placută. Serile tematice sunt definite prin diverse genuri de muzică, cum ar fi: jazz, clasică, folk, populară, etc. 
+        <br>
+        <br>
+        <br>
+        Meniul restaurantului nostru este foarte variat, cuprinzând atât rețete tradiționale românești, cât și specialitățile dedicate evenimentelor, toate pregătite cu o atenție deosebită de către bucătarii noștri.
+        <br>
+        Dorim să ne surpindem plăcut clienții, de aceea pe durata verii a fost amenajată terasa unde să puteți participa în aer liber, într-un cadru modern și relaxant, la diverse evenimente precum: aniversări, mese festive, întruniri de afaceri, etc.</p><br>
+    
+        <h4>Facilități de cazare   <i class="fa-solid fa-bed"></i></h4>
+        <p>Centrul de afaceri Levant asigura servicii de cazare pentru participantii la evenimentele desfasurate in cadrul restaurantului. Oferim diverse facilitati si va asiguram cele mai bune servicii pentru un confort garantat.</p><br>
+      
+        <h4>Livrare la domiciliu   <i class="fa-solid fa-truck"></i></h4>
+        <p>
+        Levant Catering vă scapă de bătăile de cap din bucătărie, cu gătitul și spălatul vaselor. Vă punem la dispoziție un meniu variat din preparate calde și reci, tradiționale dar și internaționale, la prețuri avantajoase. Puteți comanda un fel de mâncare sau puteți alege un platou pentru întreaga familie.
+        
+        Dacă optezi să organizezi o masă festivă la birou, alături de colegi, sau acasă, împreună cu familia, te putem ajuta să scapi de orele petrecute în bucătărie. Vă stăm la dispoziție cu o gamă variată de meniuri pentru aniversări, majorate,  întâlniri de afaceri, etc.</p><br>
+    </div>
+    </div>
+
+
+
+  <!-- Contact Section -->
+
+<div class="container" id="contact">
+    <div class="app-title">
+        <h1 data-aos="fade-up" data-aos-duration="1000">Contact</h1>
+    </div>    
+    <div class="screen">
+        <div class="screen-body">
+            <div class="screen-body-item" data-aos="flip-left" data-aos-delay="0"
+            data-aos-duration="800">
+              <div class="app-form">
+                <div class="app-form-group">
+                  <input class="app-form-control" placeholder="Nume">
+                </div>
+                <form>
+                <div class="app-form-group">
+                  <input class="app-form-control" type="email" placeholder="E-mail">
+                </div>
+                </form>
+                <div class="app-form-group">
+                  <input class="app-form-control" type="tel" placeholder="Telefon">
+                </div>
+                <div class="app-form-group message">
+                  <input class="app-form-control" placeholder="Mesaj">
+                </div>
+                <div class="app-form-group buttons">
+                  <form action="connect.php" method="post">
+                    <button type="submit" class="app-form-button">Trimite</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="screen-body-item left" data-aos="fade-up-left" data-aos-delay="0"
+        data-aos-duration="800">
+
+          <div class="contact-logo w3-center">
+            <img src="logo_mic.jpg" width="150rem" class="w3-round w3-image w3-opacity-min">
+          </div>
+          <div class="app-contact">Str. Dr. Petru Groza Nr.25, Galați.
+            <br>
+            Telefon: +40 757 648 652
+            <br>
+            Fax: +40 336 818 907
+            <br>
+            E-mail: contact@levantgalati.ro
+        </div>
+        <div class="socials">
+            <a href="https://www.facebook.com/levantrestaurant/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+
+    </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+<!-- Footer -->
+<footer class="w3-center w3-padding-32">
+
+    <p class="p1"><strong style="font-family: Great Vibes; font-size:2rem">Levant </strong> &copy; 2024 - Toate drepturile rezervate. </p>
+  <p class="p2">Powered by <a href="https://chiriacrazvan.info/" title="W3.CSS" target="_blank" class="w3-hover-text-green">CH</a></p>
+
+</footer>
+
+<script>
+   AOS.init({once: true});
+  </script>
+
+
+
+</body>
+</html>
